@@ -11,8 +11,11 @@ import openai
 import tqdm
 import shortuuid
 openai.api_key = os.getenv("OPENAI_API_KEY")
-MODEL="gpt-4"
-MODEL_ID="gpt-4:20230520"
+# MODEL="gpt-4"
+# MODEL="gpt-4-0613"
+# MODEL_ID="gpt-4:20230520"
+MODEL="gpt-3.5-turbo"
+MODEL_ID="gpt-3.5-turbo:20230327"
 
 
 def get_answer(question_id: int, question: str, max_tokens: int):

@@ -9,13 +9,13 @@ python qlora.py \
     --evaluation_strategy steps \
     --eval_dataset_size 1024 \
     --max_eval_samples 1000 \
-    --per_device_eval_batch_size 1 \
+    --per_device_eval_batch_size 8 \
     --max_new_tokens 32 \
     --dataloader_num_workers 3 \
     --group_by_length \
     --logging_strategy steps \
     --remove_unused_columns False \
-    --do_train \
+    --do_train true \
     --do_eval \
     --do_mmlu_eval \
     --lora_r 64 \
@@ -29,15 +29,18 @@ python qlora.py \
     --lr_scheduler_type constant \
     --gradient_checkpointing \
     --dataset oasst1 \
-    --source_max_len 16 \
+    --source_max_len 128 \
     --target_max_len 512 \
-    --per_device_train_batch_size 1 \
-    --gradient_accumulation_steps 16 \
+    --per_device_train_batch_size 16 \
+    --gradient_accumulation_steps 1 \
     --max_steps 1875 \
-    --eval_steps 187 \
+    --eval_steps 500 \
     --learning_rate 0.0002 \
     --adam_beta2 0.999 \
     --max_grad_norm 0.3 \
     --lora_dropout 0.1 \
     --weight_decay 0.0 \
-    --seed 0
+    --seed 0 \
+    --mmlu_split test
+    # --max_eval_samples 10 \
+    # --max_mmlu_samples 10
